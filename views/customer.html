@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <% include commonHeadElements.html %>
+</head>
+
+<body class="header-fixed header-fixed-space">
+    <div class="wrapper homePage">
+
+        <% include header.html %>
+
+        <p>This is the customer page and we change it.</p>
+        <h2>Your rated / reviewed products</h2>
+        <% for(var i in userDetails1) { %>
+
+        <p><%= userDetails1[i].rated_by %> <%= userDetails1[i].rated_by %></p>
+        <p><%= userDetails1[i].name %> <%= userDetails1[i].image_url %></p>
+
+        <% } %>
+
+        <h2>Your Details</h2>
+       <p> <%= userDetails2.name %></p>
+       <p> <%= userDetails2.mob%></p>
+       <p> <%= userDetails2.img %></p>
+       <p> <%= userDetails2.dob %></p>
+       <p> <%= userDetails2.gender %></p>
+       <p> <%= userDetails2.user_email%></p>
+       <p> <%= userDetails2.creation_timestamp %></p>
+
+
+        <% include footer.html %>
+    </div>
+<% include commonFooterScriptElements.html %>
+</body>
+</html>
