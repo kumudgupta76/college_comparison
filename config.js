@@ -2,7 +2,7 @@ module.exports = {
     env: 'dev',
     applicationUrl: 'http://localhost',
     port: {
-        http: 80,
+        http: 3000,
         https: 443
     },
     loggingMode: 'error',
