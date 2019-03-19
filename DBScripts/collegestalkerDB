@@ -1,150 +1,150 @@
 DB NAME:- collegestalker
 
 T1:-ROLE
-CREATE TABLE `role` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `name` varchar(15) NOT NULL,
-  PRIMARY KEY  (`id`)
+CREATE TABLE 'role' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'name' varchar(15) NOT NULL,
+  PRIMARY KEY  ('id')
 );
 
 T2:-USER DETAILS
-CREATE TABLE `user_details` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `first_name` varchar(15) NOT NULL,
-  `last_name` varchar(15) NOT NULL,
-  `email` varchar(63) NOT NULL,
-  `mobile_no` varchar(15) NOT NULL,
-  `password` varchar(127) NOT NULL,
-  `gender` char(1) NOT NULL,
-  `city` varchar(15) NOT NULL,
-  `state` varchar(31) default NULL,
-  `pincode` varchar(6) default NULL,
-  `active` tinyint(1) default NULL,
-  `img` varchar(255) default NULL,
-  PRIMARY KEY  (`id`),
-  UNIQUE KEY `unique_email` (`email`),
-  UNIQUE KEY `unique_mobile` (`mobile_no`)
+CREATE TABLE 'user_details' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'first_name' varchar(15) NOT NULL,
+  'last_name' varchar(15) NOT NULL,
+  'email' varchar(63) NOT NULL,
+  'mobile_no' varchar(15) NOT NULL,
+  'password' varchar(127) NOT NULL,
+  'gender' char(1) NOT NULL,
+  'city' varchar(15) NOT NULL,
+  'state' varchar(31) default NULL,
+  'pincode' varchar(6) default NULL,
+  'active' tinyint(1) default NULL,
+  'img' varchar(255) default NULL,
+  PRIMARY KEY  ('id'),
+  UNIQUE KEY 'unique_email' ('email'),
+  UNIQUE KEY 'unique_mobile' ('mobile_no')
 );
 
 T3:-USER ROLE
 
-CREATE TABLE `user_role` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `role_id` int(11) unsigned default NULL,
-  `user_id` int(11) unsigned default NULL,
-  PRIMARY KEY  (`id`),
-  KEY `fk1` (`role_id`),
-  KEY `fk2` (`user_id`),
-  CONSTRAINT `fk1` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`),
-  CONSTRAINT `fk2` FOREIGN KEY (`user_id`) REFERENCES `user_details` (`id`)
+CREATE TABLE 'user_role' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'role_id' int(11) unsigned default NULL,
+  'user_id' int(11) unsigned default NULL,
+  PRIMARY KEY  ('id'),
+  KEY 'fk1' ('role_id'),
+  KEY 'fk2' ('user_id'),
+  CONSTRAINT 'fk1' FOREIGN KEY ('role_id') REFERENCES 'role' ('id'),
+  CONSTRAINT 'fk2' FOREIGN KEY ('user_id') REFERENCES 'user_details' ('id')
 );
 
 T4:-COLLEGE TYPE
 
-CREATE TABLE `college_type` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `name` varchar(15) NOT NULL,
-  PRIMARY KEY  (`id`)
+CREATE TABLE 'college_type' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'name' varchar(15) NOT NULL,
+  PRIMARY KEY  ('id')
 );
 
 T5:-COLLEGE DETAILS
 
-CREATE TABLE `college_details` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `name` varchar(63) NOT NULL,
-  `email` varchar(63) NOT NULL,
-  `contact` varchar(15) NOT NULL,
-  `city` varchar(15) NOT NULL,
-  `state` varchar(31) default NULL,
-  `pincode` varchar(6) default NULL,
-  `type_id` int(11) unsigned not null,
-  `discipline` varchar(15) NOT NULL,
-  `affiliation` varchar(15) default NULL,
-  `collegehours` int unsigned NOT NULL,
-  `surrounding` varchar(15) default NULL,
-  `img` varchar(255) default NULL,
-  `rating` int unsigned default 0,
-  PRIMARY KEY  (`id`),
-  UNIQUE KEY `unique_email` (`email`),
-  UNIQUE KEY `unique_mobile` (`contact`),
-  KEY `fk3` (`type_id`),
-  CONSTRAINT `fk3` FOREIGN KEY (`type_id`) REFERENCES `college_type` (`id`)
+CREATE TABLE 'college_details' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'name' varchar(63) NOT NULL,
+  'email' varchar(63) NOT NULL,
+  'contact' varchar(15) NOT NULL,
+  'city' varchar(15) NOT NULL,
+  'state' varchar(31) default NULL,
+  'pincode' varchar(6) default NULL,
+  'type_id' int(11) unsigned not null,
+  'discipline' varchar(15) NOT NULL,
+  'affiliation' varchar(15) default NULL,
+  'collegehours' int unsigned NOT NULL,
+  'surrounding' varchar(15) default NULL,
+  'img' varchar(255) default NULL,
+  'rating' int unsigned default 0,
+  PRIMARY KEY  ('id'),
+  UNIQUE KEY 'unique_email' ('email'),
+  UNIQUE KEY 'unique_mobile' ('contact'),
+  KEY 'fk3' ('type_id'),
+  CONSTRAINT 'fk3' FOREIGN KEY ('type_id') REFERENCES 'college_type' ('id')
 );
 
 T6:- SPEC-WEIGHT TABLE
 
-CREATE TABLE `spec_weight` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `specification` varchar(15) NOT NULL,
-  `weight` int unsigned NOT NULL,
-  `priority` int unsigned DEFAULT NULL,
-  PRIMARY KEY  (`id`)
+CREATE TABLE 'spec_weight' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'specification' varchar(15) NOT NULL,
+  'weight' int unsigned NOT NULL,
+  'priority' int unsigned DEFAULT NULL,
+  PRIMARY KEY  ('id')
 );
 
 T7:- COLLEGE SPEC
 
-CREATE TABLE `college_spec` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `college_id` int(11) unsigned not null,
-  `spec_score` int unsigned NOT NULL,
-  PRIMARY KEY  (`id`),
-  KEY `fk4` (`college_id`),
-  CONSTRAINT `fk4` FOREIGN KEY (`college_id`) REFERENCES `college_details` (`id`)
+CREATE TABLE 'college_spec' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'college_id' int(11) unsigned not null,
+  'spec_score' int unsigned NOT NULL,
+  PRIMARY KEY  ('id'),
+  KEY 'fk4' ('college_id'),
+  CONSTRAINT 'fk4' FOREIGN KEY ('college_id') REFERENCES 'college_details' ('id')
 );
 
 T8:- COURSE TYPE
 
-CREATE TABLE `course_type` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `name` varchar(15) NOT NULL,
-  PRIMARY KEY  (`id`)
+CREATE TABLE 'course_type' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'name' varchar(15) NOT NULL,
+  PRIMARY KEY  ('id')
 );
 
 T9:- COURSE FEE
 
-CREATE TABLE `course_fee` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `course_id` int(11) unsigned not null,
-  `first_yr` varchar(15) NOT NULL,
-  `second_yr` varchar(15) DEFAULT NULL,
-  `third_yr` varchar(15) DEFAULT NULL,
-  `fourth_yr` varchar(15) DEFAULT NULL,
-  PRIMARY KEY  (`id`),
-  KEY `fk5` (`course_id`),
-  CONSTRAINT `fk5` FOREIGN KEY (`course_id`) REFERENCES `course_type` (`id`)
+CREATE TABLE 'course_fee' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'course_id' int(11) unsigned not null,
+  'first_yr' varchar(15) NOT NULL,
+  'second_yr' varchar(15) DEFAULT NULL,
+  'third_yr' varchar(15) DEFAULT NULL,
+  'fourth_yr' varchar(15) DEFAULT NULL,
+  PRIMARY KEY  ('id'),
+  KEY 'fk5' ('course_id'),
+  CONSTRAINT 'fk5' FOREIGN KEY ('course_id') REFERENCES 'course_type' ('id')
 );
 
 T10:- FEE TYPE
 
-CREATE TABLE `fee_type` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `name` varchar(15) NOT NULL,
-  PRIMARY KEY  (`id`)
+CREATE TABLE 'fee_type' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'name' varchar(15) NOT NULL,
+  PRIMARY KEY  ('id')
 );
 
 T11:- FEE
 
-CREATE TABLE `fee` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `creation_timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `college_id` int(11) unsigned not null,
-  `type_id` int(11) unsigned not null,
-  `fee` varchar(15) not null,
-  PRIMARY KEY  (`id`),
-  KEY `fk6` (`college_id`),
-  CONSTRAINT `fk6` FOREIGN KEY (`college_id`) REFERENCES `college_details` (`id`),
-  KEY `fk7` (`type_id`),
-  CONSTRAINT `fk7` FOREIGN KEY (`type_id`) REFERENCES `fee_type` (`id`)
+CREATE TABLE 'fee' (
+  'id' int(11) unsigned NOT NULL auto_increment,
+  'creation_timestamp' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'college_id' int(11) unsigned not null,
+  'type_id' int(11) unsigned not null,
+  'fee' varchar(15) not null,
+  PRIMARY KEY  ('id'),
+  KEY 'fk6' ('college_id'),
+  CONSTRAINT 'fk6' FOREIGN KEY ('college_id') REFERENCES 'college_details' ('id'),
+  KEY 'fk7' ('type_id'),
+  CONSTRAINT 'fk7' FOREIGN KEY ('type_id') REFERENCES 'fee_type' ('id')
 );
 
 
