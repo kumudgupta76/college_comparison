@@ -3,18 +3,31 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <% include commonHeadElements.html %>
+<title>
+Home page
+</title>
 </head>
-
-<body class="header-fixed header-fixed-space">
-    <div class="wrapper homePage">
-
-        <% include header.html %>
-
-        <p>This is the home page</p>
-
-        <% include footer.html %>
-    </div>
-<% include commonFooterScriptElements.html %>
+<body>
+<form id="form1" name="form1" method="get" action="/app/showcolleges">
+  <p>
+    <label for="textfield">Location:</label>
+    <input type="text" name="loc" id="textfield">
+  </p>
+  <p>College Type</p>
+  <p>
+    <label>
+      <input type="radio" name="colltype" value="private" id="colltype_0">
+      Private</label>
+    <br>
+    <label>
+      <input type="radio" name="colltype" value="gov" id="colltype_1">
+      Government</label>
+  </p>
+  <p>
+    <input type="reset" name="reset" id="reset" value="Reset">
+    <input type="submit" name="submit" id="submit" value="Submit">
+    <br>
+  </p>
+</form>
 </body>
 </html>
