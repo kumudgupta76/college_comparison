@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <% include commonHeadElements.html %>
+  <title>College Stalkers | List Colleges</title>
+</head>
+
+<body class="header-fixed header-fixed-space">
+  <div class="wrapper homePage">
+
+      <% include header.html %>
+      <section id="mu-contact">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="mu-contact-area">
+                   <!-- start title -->
+                   <div class="mu-title">
+                     <h2>Choose Your Priorities</h2>
+                     </div>
+                    <div class="mu-contact-content">           
+                        <div class="row">
+                            <div class="col-md-9">
+                            </div>
+                          <div class="col-md-3">
+                            <div class="mu-contact-right">
+                              <form class="contactform" method="get" action="/app/showcolleges">                  
+                                
+                                <label data-toggle="tooltip" title="Represents your budget">Fee Upper Range</label>
+                                <input type="text"> </input>
+                                
+                                <label data-toggle="tooltip" title="Do you want to avail Bus Facility or Hostel">Bus Facility</label>
+                                	
+                                <div id="BusHostel">
+                                <input type="radio" name="bfhm" value="1">Bus Facility</input>
+                                <input type="radio" name="bfhm" value="2">Hostel</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Describes the rating of the Bus Facility/Hostel Facility">Bus/Hostel Rating</label>
+                                
+                                <div id="BH Facility">
+                                <input type="radio" name="bhfacility" value="normal">Normal</input>
+                                <input type="radio" name="bhfacility" value="high">High</input>
+                                <input type="radio" name="bhfacility" value="vhigh">Very High</input>
+                                </div>
+                                
+                                
+                                		
+                                <label data-toggle="tooltip" title="The kind of building qualities and other quality features you want">Infrastructure</label>
+                                
+                                <div id="Infrastructure">
+                                <input type="radio" name="infra" value="normal">Normal</input>
+                                <input type="radio" name="infra" value="high">High</input>
+                                <input type="radio" name="infra" value="vhigh">Very High</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Describes your interest in placements">Placements</label>
+                                
+                                <div id="Placements">
+                                <input type="radio" name="placements" value="normal">Normal</input>
+                                <input type="radio" name="placements" value="high">High</input>
+                                <input type="radio" name="placements" value="vhigh">Very High</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Describes the level of discipline you want in the college">Discipline</label>
+                                
+                                <div id="Discipline">
+                                <input type="radio" name="discipline" value="normal">Normal</input>
+                                <input type="radio" name="discipline" value="high">High</input>
+                                <input type="radio" name="discipline" value="vhigh">Very High</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Describes your interest in club activities">Clubs</label>
+                                
+                                <div id="Clubs">
+                                <input type="radio" name="clubs" value="normal">Normal</input>
+                                <input type="radio" name="clubs" value="high">High</input>
+                                <input type="radio" name="clubs" value="vhigh">Very High</input>
+                                </div>
+                                
+                                
+                                		
+                                <label data-toggle="tooltip" title="Your choice for good user reviews">User Reviews</label>
+                                
+                                <div id="User Reviews">
+                                <input type="radio" name="userreviews" value="normal">Normal</input>
+                                <input type="radio" name="userreviews" value="high">High</input>
+                                <input type="radio" name="userreviews" value="vhigh">Very High</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Accrediations of college e.g. NAAC ACCREDIATION">Affiliations</label>
+                                
+                                <div id="Affiliations">
+                                <input type="radio" name="affiliations" value="normal">Normal</input>
+                                <input type="radio" name="affiliations" value="high">High</input>
+                                <input type="radio" name="affiliations" value="vhigh">Very High</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Describes your choice for syllabus strength">Curricullum</label>
+                                
+                                <div id="Curricullum">
+                                <input type="radio" name="curricullum" value="normal">Normal</input>
+                                <input type="radio" name="curricullum" value="high">High</input>
+                                <input type="radio" name="curricullum" value="vhigh">Very High</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Describes whether you want vhigh working hours or normal working hours">Average Duration</label>
+                                
+                                <div id="Average Duration">
+                                <input type="radio" name="avgduration" value="normal">Normal</input>
+                                <input type="radio" name="avgduration" value="high">High</input>
+                                <input type="radio" name="avgduration" value="vhigh">Very High</input>
+                                </div>
+                                
+                                		
+                                <label data-toggle="tooltip" title="Malls, Restaurants and other utilities around college">College Surroundings</label>
+                                
+                                <div id="College Surroundings">
+                                <input type="radio" name="collegesurroundings" value="normal">Normal</input>
+                                <input type="radio" name="collegesurroundings" value="high">High</input>
+                                <input type="radio" name="collegesurroundings" value="vhigh">Very High</input>
+                                </div>       
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+        
+      <% include footer.html %>
+<% include commonFooterScriptElements.html %>
+</body>
+</html>

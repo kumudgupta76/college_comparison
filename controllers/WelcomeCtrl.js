@@ -35,9 +35,9 @@ module.exports = {
         //todo-RDX
 
 
-        // yield this.render('listColleges',{
+        yield this.render('listColleges',{
 
-        // });
+        });
     },
     showCDetailPage: function* (next) {
         var collid=this.request.query.cid;
@@ -49,6 +49,9 @@ module.exports = {
 
         });
     },
+    showCollegeFormPage:function* (next) {
+        yield this.render('collegeDetailForm',{});
+    },
     putCollegeInfoPage: function* (next) {
         var cname=this.request.body.cname;
         var clocation=this.request.body.clocation;
@@ -56,6 +59,11 @@ module.exports = {
         /* add a query to insert college data in to database*/
         //todo - RDX
         console.log("data  insrted");
+    },
+    showTestPage:function* (next) {
+        yield this.render('index',{
+
+        });
     },
     showComparePage: function* (next) {
         yield this.render('home',{
