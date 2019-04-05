@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!--> 
+<html lang="en" xmlns:By="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
 <head>
   <% include commonHeadElements.html %>
   <title>College Stalkers | List Colleges</title>
@@ -11,9 +12,14 @@
   <div class="wrapper homePage">
 
       <% include header.html %>
+      
+      <div class="row justify-content-md-center">
+        
+    </div>
       <section id="mu-contact">
             <div class="container">
               <div class="row">
+                    
                 <div class="col-md-12">
                   <div class="mu-contact-area">
                    <!-- start title -->
@@ -22,17 +28,39 @@
                      </div>
                     <div class="mu-contact-content">           
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-9">
+                                <% for(var i in listcollege) { %>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                              <div class="card">
+                                                <div class="card-body">
+                                                    <img src="../static/images/1.jpg" width="60%">
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="card">
+                                                  <div class="card-body">
+                                                      <h1><%=listcollege[i].name%><h1>
+                                                    <span><%=listcollege[i].city%>,<%=listcollege[i].state%></span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    <hr>
+                                  </div>
+                                  <% } %>
                             </div>
-                          <div class="col-md-4">
+                          <div class="col-md-3">
                             <div class="mu-contact-right">
-                              <form class="contactform " method="get" action="/app/showcolleges">                  
+                              <form class="contactform " method="get" action="/app/showorderedcolleges">                  
                                 
                                 <p><label data-toggle="tooltip" title="Represents your budget">Fee Upper Range</label>
                                 </p><p><input type="text"> </input></p>
                                 <hr class="style1">
                                 <p>
-                                <label data-toggle="tooltip" title="Do you want to avail Bus Facility or Hostel">Bus Facility</label>
+                                <label data-toggle="tooltip" title="Do you want to avail Bus Facility or Hostel">Accomodation/Transport Facility</label>
                                 	
                                 <div id="BusHostel">
                                 <input type="radio" name="bfhm" value="1">  Bus Facility</input>&nbsp;&nbsp;&nbsp;
@@ -43,9 +71,9 @@
                                 <p><label data-toggle="tooltip" title="Describes the rating of the Bus Facility/Hostel Facility">Bus/Hostel Rating</label>
                                 
                                 <div id="BH Facility">
-                                <input type="radio" name="bhfacility" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="bhfacility" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="bhfacility" value="vhigh">    Very High</input>
+                                <input type="radio" name="bhfacility" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="bhfacility" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="bhfacility" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 
@@ -53,36 +81,36 @@
                                 <p><label data-toggle="tooltip" title="The kind of building qualities and other quality features you want">Infrastructure</label>
                                 
                                 <div id="Infrastructure">
-                                <input type="radio" name="infra" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="infra" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="infra" value="vhigh">    Very High</input>
+                                <input type="radio" name="infra" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="infra" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="infra" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 		
                                 <p><label data-toggle="tooltip" title="Describes your interest in placements">Placements</label>
                                 
                                 <div id="Placements">
-                                <input type="radio" name="placements" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="placements" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="placements" value="vhigh">    Very High</input>
+                                <input type="radio" name="placements" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="placements" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="placements" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 		
                                 <p><label data-toggle="tooltip" title="Describes the level of discipline you want in the college">Discipline</label>
                                 
                                 <div id="Discipline">
-                                <input type="radio" name="discipline" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="discipline" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="discipline" value="vhigh">    Very High</input>
+                                <input type="radio" name="discipline" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="discipline" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="discipline" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 		
                                 <p><label data-toggle="tooltip" title="Describes your interest in club activities">Clubs</label>
                                 
                                 <div id="Clubs">
-                                <input type="radio" name="clubs" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="clubs" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="clubs" value="vhigh">    Very High</input>
+                                <input type="radio" name="clubs" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="clubs" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="clubs" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 
@@ -90,45 +118,45 @@
                                 <p><label data-toggle="tooltip" title="Your choice for good user reviews">User Reviews</label>
                                 
                                 <div id="User Reviews">
-                                <input type="radio" name="userreviews" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="userreviews" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="userreviews" value="vhigh">    Very High</input>
+                                <input type="radio" name="userreviews" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="userreviews" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="userreviews" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 		
                                 <p><label data-toggle="tooltip" title="Accrediations of college e.g. NAAC ACCREDIATION">Affiliations</label>
                                 
                                 <div id="Affiliations">
-                                <input type="radio" name="affiliations" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="affiliations" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="affiliations" value="vhigh">    Very High</input>
+                                <input type="radio" name="affiliations" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="affiliations" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="affiliations" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 		
                                 <p><label data-toggle="tooltip" title="Describes your choice for syllabus strength">Curricullum</label>
                                 
                                 <div id="Curricullum">
-                                <input type="radio" name="curricullum" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="curricullum" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="curricullum" value="vhigh">    Very High</input>
+                                <input type="radio" name="curricullum" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="curricullum" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="curricullum" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 		
-                                <p><label data-toggle="tooltip" title="Describes whether you want vhigh working hours or normal working hours">Average Duration</label>
+                                <p><label data-toggle="tooltip" title="Describes whether you want 2 working hours or 0 working hours">Average Duration</label>
                                 
                                 <div id="Average Duration">
-                                <input type="radio" name="avgduration" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="avgduration" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="avgduration" value="vhigh">    Very High</input>
+                                <input type="radio" name="avgduration" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="avgduration" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="avgduration" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1">
                                 		
                                 <p><label data-toggle="tooltip" title="Malls, Restaurants and other utilities around college">College Surroundings</label>
                                 
                                 <div id="College Surroundings">
-                                <input type="radio" name="collegesurroundings" value="normal" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="collegesurroundings" value="high">    High</input>&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="collegesurroundings" value="vhigh">    Very High</input>
+                                <input type="radio" name="collegesurroundings" value="0" checked="checked">    Normal</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="collegesurroundings" value="1">    High</input>&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="collegesurroundings" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1"> 
                                 <p class="form-submit">
