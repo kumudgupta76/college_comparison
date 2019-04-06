@@ -26,19 +26,83 @@
                             </div>
                           <div class="col-md-6">
                             <div class="mu-contact-left">
-                              <form class="contactform" method="get" action="/app/showcolleges">                  
+                              <form class="contactform" action=/app/collegeinfo method="post" enctype="multipart/form-data">                  
+
+                                  <label for="name">Name <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="name">
                                 
-                                  <label for="loc">Location <span class="required">*</span></label>
-                                  <input type="text" required="required" size="30" value="" name="loc">
+                                  <label for="email">Email <span class="required">*</span></label>
+                                  <input type="email" value="0" size="30"  name="email">
                                 
-                                
-                                  <label for="colltype">College Type</label>
-                                  <p><input type="radio" name="colltype" value="private" id="colltype_0">   Private</p> 
-                                      <p><input type="radio" name="colltype" value="gov" id="colltype_1">   Government</p>           
+                                  <label for="contact">Contact <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" value="" name="contact">
+
+                                  <label for="city">City <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30"  name="city">
+
+                                  <label for="state">State <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30"  name="state">    
+                                  
+                                  <label for="pincode">Pincode <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="pincode">                                  
+
+
+                                  <label for="type">College Type <span class="required">*</span></lab><br/>
+                                  <select name="ctype">
+                                    <option value="1">Government University</option>
+                                    <option value="2">Government College</option>
+                                    <option value="3">Private University</option>
+                                    <option value="4">Private College</option>
+                                  </select>
+
+                                  <label for="type">College Image <span class="required">*</span></lab><br/>
+                                  <input type="file" name="image" id="img">
+                                  
+
+                                  <label for="cfee">Value of Fee <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="cfee"> 
+                                  <h2> Factors </h2>
+                                  <label for="fee">Fee <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="fee">
+
+                                  <label for="bus">Bus <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="bus">    
+
+                                  <label for="hostel">Hostel <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="hostel">                                      
+
+                                  <label for="infra">Infrastructure <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="infra">                                      
+
+                                  <label for="placement">Placement <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="placement">                                      
+
+                                  <label for="discipline">Discipline <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="discipline">                                      
+
+                                  <label for="clubs">Clubs <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="clubs">                                      
+
+                                  <label for="reviews">Reviews <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="reviews">                                      
+
+
+                                  <label for="affiliations">Affiliations <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="affiliations">                                      
+
+                                  <label for="curricullum">Curricullum <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="curricullum">                                      
+
+                                  <label for="duration">Duration <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="duration">                                      
+
+                                  <label for="surroundings">Surroundings <span class="required">*</span></label>
+                                  <input type="text" value="0" size="30" name="surroundings">
+                                </div></p>
+                                <hr class="style1"> 
                                 <p class="form-submit">
-                                    <div class="text-right"><input type="submit" value="Send Message" class="mu-post-btn" name="submit"></div>
-                                  </div>
-                                </p>        
+                                    <div class="text-right"><input type="submit" value="Submit" class="mu-post-btn" name="submit"></div>
+                                  </div>                                      
                               </form>
                             </div>
                           </div>

@@ -14,6 +14,9 @@ module.exports = function(app){
     router.get('/test',welcomeCtrl.showTestPage);
 
     router.get('/showcolleges', welcomeCtrl.showCollegesPage);
+    router.get('/collegedetailform',welcomeCtrl.showCollegeFormPage);
+    router.post('/collegeinfo', welcomeCtrl.putCollegeInfoPage);
+
     router.get('/showorderedcolleges', welcomeCtrl.showOrderedCollegesPage);
     router.get('/compare/:id1/:id2', welcomeCtrl.showComparePage);
     router.get('/cdetail/:id', welcomeCtrl.showCDetailPage);

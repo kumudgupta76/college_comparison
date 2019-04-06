@@ -73,6 +73,7 @@ module.exports = {
         var list1=util.format(list,loc,colltype);
         var result1 = yield databaseUtils.executeQuery(list1);
         var sortedArray=[];
+
         var rows=[];
         var akm;
         for( var i in result1)
@@ -119,14 +120,50 @@ module.exports = {
     showCollegeFormPage:function* (next) {
         yield this.render('collegeDetailForm',{});
     },
-    putCollegeInfoPage: function* (next) {
-        var cname=this.request.body.cname;
-        var clocation=this.request.body.clocation;
-        console.log(cname+" "+clocation);
-        /* add a query to insert college data in to database*/
-        //todo - RDX
-        console.log("data  insrted");
-    },
+    
+putCollegeInfoPage: function* (next) {
+     console.log(this.request.body);
+    var name=this.request.body.fields.name;
+    var email=this.request.body.fields.email;
+    var contact=this.request.body.fields.contact;
+    var city=this.request.body.fields.city;
+    var state=this.request.body.fields.state;
+    var pincode=this.request.body.fields.pincode;
+    var ctype=this.request.body.fields.ctype;
+    var cfee=this.request.body.fields.cfee;
+    var fee=this.request.body.fields.fee;
+    var bus=this.request.body.fields.bus;
+    var hostel=this.request.body.fields.hostel;
+    var infra=this.request.body.fields.infra;
+    var placement=this.request.body.fields.placement;
+    var discipline=this.request.body.fields.discipline;
+    var clubs=this.request.body.fields.clubs;
+    var reviews=this.request.body.fields.reviews;
+    var affiliations=this.request.body.fields.affiliations;
+    var curriculum=this.request.body.fields.curricullum;
+    var duration=this.request.body.fields.duration;
+    var surroundings=this.request.body.fields.surroundings;
+
+    var userUploadedFile = this.request.body.files.image; 
+    var pic = userUploadedFile.path.split('/');
+    var img=pic[3];
+    console.log(name,email,contact,city,state,pincode,ctype,fee,bus,hostel,infra,placement,discipline,clubs,reviews,affiliations,curriculum,duration,surroundings,img);
+    var list1= 'INSERT INTO `college_details`(name,email,contact,city,state,pincode,type_id,img) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s")';
+    var query=util.format(list1,name,email,contact,city,state,pincode,ctype,img);
+    var result1 = yield databaseUtils.executeQuery(query);
+    console.log(result1.insertId);
+    var fq='insert into course_fee(course_id,college_id,avgfee) values("%s","%s","%s")';
+    var query1=util.format(fq,1,result1.insertId,cfee);
+    var res = yield databaseUtils.executeQuery(query1);
+    list1='INSERT INTO `cfw`(college_id,fee,bus,hostel,infra,placement,discipline,clubs,reviews,affiliations,curriculum,duration,surrounding) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s")';
+    query=util.format(list1,result1.insertId,fee,bus,hostel,infra,placement,discipline,clubs,reviews,affiliations,curriculum,duration,surroundings);
+    result1 = yield databaseUtils.executeQuery(query);
+    console.log("data inserted");
+    yield this.render('404',{
+
+    });
+},
+
     showTestPage:function* (next) {
         yield this.render('index',{
 
