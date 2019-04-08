@@ -12,7 +12,9 @@ module.exports = function(app){
     router.get('/ourteam',welcomeCtrl.showOurteamPage);
     router.get('/contact',welcomeCtrl.showContactPage);
     router.get('/test',welcomeCtrl.showTestPage);
-
+    router.get('/:id',welcomeCtrl.showErrorPage);
+    router.get('/:id/:id',welcomeCtrl.showErrorPage);
+    router.get('/:id/:id/:id',welcomeCtrl.showErrorPage);
     router.get('/showcolleges', welcomeCtrl.showCollegesPage);
     router.get('/collegedetailform',welcomeCtrl.showCollegeFormPage);
     router.post('/collegeinfo', welcomeCtrl.putCollegeInfoPage);
