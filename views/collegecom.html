@@ -4,7 +4,7 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
   <% include commonHeadElements.html %>
-  <title>College Stalkers | College Detail</title>
+  <title>College Stalkers | College Comparison</title>
 </head>
 
 <body class="header-fixed header-fixed-space">
@@ -33,7 +33,7 @@
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                  <img src="../static/uploads/<%=listcollege.img%>" width="80%">
+                  <img src="../static/uploads/<%=listcollege.img%>" width="60%">
               </div>
             </div>
           </div>
@@ -50,11 +50,10 @@
       </div>
   <hr>
 </div>
-
 <section id="mu-course-content">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="mu-course-content-area">
            <div class="row">
              <div class="col-md-9">
@@ -64,7 +63,7 @@
                    <div class="col-md-12">
                      <div class="mu-latest-course-single">
                        <figure class="mu-latest-course-img">
-                         <a href="#"><img src="../static/uploads/<%=listcollege.img%>" alt="img">
+                         <a href="#"><img src="../static/uploads/1.jpg" alt="img"></a>
                        </figure>
                        <div class="mu-latest-course-single-content">
                          <h2><a href="/app/cdetail/<%=listcollege.id%>"><%=listcollege.name%></a></h2>
@@ -138,6 +137,90 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="mu-course-content-area">
+           <div class="row">
+             <div class="col-md-9">
+               <!-- start course content container -->
+               <div class="mu-course-container mu-course-details">
+                 <div class="row">
+                   <div class="col-md-12">
+                     <div class="mu-latest-course-single">
+                       <figure class="mu-latest-course-img">
+                         <a href="#"><img src="../static/uploads/1.jpg" alt="img"></a>
+                       </figure>
+                       <div class="mu-latest-course-single-content">
+                         <h2><a href="/app/cdetail/<%=listcollege.id%>"><%=listcollege2.name%></a></h2>
+                         <h4><span><%=listcollege2.city%>,<%=listcollege2.state%></span></h4>
+                         <ul>
+                           <li> <span>Email</span> <span><%=listcollege2.email%></span></li>
+                           <li> <span>Place</span> <span><%=listcollege2.city%>,<%=listcollege2.state%></span></li>
+                           <li> <span>Total Students</span> <span>800+</span></li>
+                           <li> <span>Contact</span> <span><%=listcollege2.contact%></span></li>
+                           <li> <span>Pin Code</span> <span><%=listcollege2.pincode%></span></li>
+                         </ul>
+                         <h4>Course Outline</h4>
+                         <div class="table-responsive">
+                           <table class="table">
+                           <thead>
+                             <tr>
+                               <th> Title </th>
+                               <th> Course Time </th>
+                               <th> Spent Time </th>
+                               <th> Status </th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                             <tr>
+                               <td> 1. Topic 1 </td>
+                               <td> 15:30 </td>
+                               <td> 13:80 </td>
+                               <td> Successful </td>
+                             </tr>
+                             <tr>
+                               <td> 2. Topic 2 </td>
+                               <td> 15:30 </td>
+                               <td> 13:80 </td>
+                               <td> Successful </td>
+                             </tr>
+                             <tr>
+                               <td> 3. Topic 3 </td>
+                               <td> 15:30 </td>
+                               <td> - </td>
+                               <td> Successful </td>
+                             </tr>
+                             <tr>
+                               <td> 4. Topic 4 </td>
+                               <td> 15:30 </td>
+                               <td> 13:80 </td>
+                               <td> Successful </td>
+                             </tr>
+                             <tr>
+                               <td> 5. Topic 5 </td>
+                               <td> 15:30 </td>
+                               <td> - </td>
+                               <td> Waiting </td>
+                             </tr>
+                             <tr>
+                               <td> 6. Topic 6 </td>
+                               <td> 15:30 </td>
+                               <td> 13:80 </td>
+                               <td> - </td>
+                             </tr>
+                           </tbody>
+                         </table>
+                         </div>
+                       </div>
+                     </div> 
+                   </div>                                   
+                 </div>
+               </div>
+               <!-- end course content container -->
+         
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -148,3 +231,4 @@
 <% include commonFooterScriptElements.html %>
 </body>
 </html>
+

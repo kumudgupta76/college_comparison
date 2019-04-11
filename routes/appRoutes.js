@@ -12,14 +12,18 @@ module.exports = function(app){
     router.get('/ourteam',welcomeCtrl.showOurteamPage);
     router.get('/contact',welcomeCtrl.showContactPage);
     router.get('/test',welcomeCtrl.showTestPage);
-
+    // router.get('/:id',welcomeCtrl.showErrorPage);
+    // router.get('/:id/:id',welcomeCtrl.showErrorPage);
+    // router.get('/:id/:id/:id',welcomeCtrl.showErrorPage);
     router.get('/showcolleges', welcomeCtrl.showCollegesPage);
     router.get('/collegedetailform',welcomeCtrl.showCollegeFormPage);
     router.post('/collegeinfo', welcomeCtrl.putCollegeInfoPage);
 
     router.get('/showorderedcolleges', welcomeCtrl.showOrderedCollegesPage);
-    router.get('/compare/:id1/:id2', welcomeCtrl.showComparePage);
+    
+    router.get('/compare/:id1/:id2', welcomeCtrl.showComPage);
     router.get('/cdetail/:id', welcomeCtrl.showCDetailPage);
+    // router.get('/collegecom', welcomeCtrl.showComPage);
     router.get('/collegeform',welcomeCtrl.showCollegeFormPage);
     router.get('/collegeinfo', welcomeCtrl.putCollegeInfoPage);
 

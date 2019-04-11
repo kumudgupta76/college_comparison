@@ -29,21 +29,22 @@
                     <div class="mu-contact-content">           
                         <div class="row">
                             <div class="col-md-9">
-                                <% for(var i in listcollege) { %>
+                                <% for(var i in squery1) { %>
+                                  
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-6">
                                               <div class="card">
                                                 <div class="card-body">
-                                                    <img src="../static/uploads/<%=listcollege[i].img%>" width="60%">
+                                                    <img src="../static/uploads/<%=squery1[i].img%>" width="60%">
                                                 </div>
                                               </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <a href="/app/cdetail/<%= listcollege[i].id %>"><h1><%=listcollege[i].name%><h1></a>
-                                                    <span><%=listcollege[i].city%>,<%=listcollege[i].state%></span>
+                                                      <a href="/app/cdetail/<%= squery1[i].id %>"><h1><%=squery1[i].name%><h1></a>
+                                                    <span><%=squery1[i].city%>,<%=squery1[i].state%></span>
                                                   </div>
                                                 </div>
                                               </div>
@@ -159,8 +160,6 @@
                                 <input type="radio" name="collegesurroundings" value="2">    Very High</input>
                                 </div></p>
                                 <hr class="style1"> 
-                                <input type="hidden"  value="<%= loc %>" name="loc" >
-                                <input type="hidden"  value="<%= colltype %>" name="colltype">
                                 <p class="form-submit">
                                     <div class="text-right"><input type="submit" value="Send Message" class="mu-post-btn" name="submit"></div>
                                   </div>
@@ -179,4 +178,5 @@
       <% include footer.html %>
 <% include commonFooterScriptElements.html %>
 </body>
+
 </html>
