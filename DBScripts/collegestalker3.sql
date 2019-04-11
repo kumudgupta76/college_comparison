@@ -41,7 +41,7 @@ CREATE TABLE `cfw` (
   PRIMARY KEY (`id`),
   KEY `fk8` (`college_id`),
   CONSTRAINT `fk8` FOREIGN KEY (`college_id`) REFERENCES `college_details` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,7 +50,7 @@ CREATE TABLE `cfw` (
 
 LOCK TABLES `cfw` WRITE;
 /*!40000 ALTER TABLE `cfw` DISABLE KEYS */;
-INSERT INTO `cfw` VALUES (5,'2019-04-05 06:53:23',1,'20','8','9','6','8','6','4','7','13','10','8','10'),(6,'2019-04-05 06:53:23',2,'20','2','10','6','7','4','4','7','12','12','8','9'),(7,'2019-04-05 06:53:23',3,'20','9','13','8','14','8','8','6','9','9','5','6'),(8,'2019-04-05 06:53:23',4,'20','8','13','9','13','8','8','7','11','10','6','6');
+INSERT INTO `cfw` VALUES (12,'2019-04-11 09:48:27',19,'20','5','12','8','6','6','4','8','14','10','9','8'),(13,'2019-04-11 09:59:39',20,'20','5','14','9','12','8','7','9','13','12','4','6'),(14,'2019-04-11 10:09:41',21,'20','3','12','8','6','6','3','6','13','7','7','8'),(15,'2019-04-11 10:18:42',22,'20','5','13','7','11','8','7','8','12','11','8','6'),(16,'2019-04-11 10:23:59',23,'20','8','10','7','13','6','7','9','14','13','6','8'),(17,'2019-04-11 10:28:29',24,'20','2','10','6','5','4','3','6','13','12','8','7'),(18,'2019-04-11 10:43:15',25,'20','8','12','8','10','5','6','8','9','10','7','3'),(19,'2019-04-11 10:45:56',26,'20','2','5','8','8','5','8','6','12','10','8','9'),(20,'2019-04-11 10:48:13',27,'20','9','10','9','8','8','9','5','10','8','6','8'),(21,'2019-04-11 10:52:56',28,'20','9','14','9','5','5','9','6','7','8','8','9'),(22,'2019-04-11 10:56:27',29,'20','9','14','9','11','7','8','8','10','12','5','8'),(23,'2019-04-11 10:58:13',30,'20','9','14','9','13','8','10','6','10','10','4','7'),(24,'2019-04-11 11:00:37',31,'20','7','12','8','12','6','9','8','11','12','5','8'),(25,'2019-04-11 11:02:55',32,'20','4','6','10','7','3','7','8','14','13','7','8');
 /*!40000 ALTER TABLE `cfw` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,7 +77,7 @@ CREATE TABLE `college_details` (
   UNIQUE KEY `unique_mobile` (`contact`),
   KEY `fk3` (`type_id`),
   CONSTRAINT `fk3` FOREIGN KEY (`type_id`) REFERENCES `college_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `college_details` (
 
 LOCK TABLES `college_details` WRITE;
 /*!40000 ALTER TABLE `college_details` DISABLE KEYS */;
-INSERT INTO `college_details` VALUES (1,'2019-03-10 18:13:38','College1','college1@gmail.com','343212312','delhi','delhi','110006',1,NULL),(2,'2019-03-10 18:13:38','College2','college2@gmail.com','232312312','mathura','uttar pradesh','281406',2,NULL),(3,'2019-03-10 18:13:38','College3','college3@gmail.com','433123122','noida','uttar pradesh','282346',3,NULL),(4,'2019-03-10 18:13:38','College4','college4@gmail.com','241312312','allahabad','uttar pradesh','548806',4,NULL);
+INSERT INTO `college_details` VALUES (19,'2019-04-11 09:48:27','APJ Abdul Kalam University','apjabdulkalamclg@gmail.com','+91-9760941714','Lucknow','Uttar Pradesh','261003',1,'upload_d184c469f9807024790e11fd1250c7ee'),(20,'2019-04-11 09:59:38',' Delhi Technical University','dtu@gmail.com','+91-9765141268','Delhi','Delhi','274002',1,'upload_6152821e56da5dff524b0d991bc96d60'),(21,'2019-04-11 10:09:40','Deen Dayal Upadhyay University','dduu@gmail.com','+91-9765141456','Gorakhpur','Uttar Pradesh','276001',1,'upload_6ef0d3fe76368d7248972e263ca7a832'),(22,'2019-04-11 10:18:41','Shaheed Bhagat Singh Institute of Technology','sbsit@gmail.com','+91-9765431211','Ferozpur','Punjab','312004',2,'upload_07e960b99e41f5b8a4ee464101c1e859'),(23,'2019-04-11 10:23:59','Netaji Subhash Institute of Technology','nsit@gmail.com','+91-8126199171','Delhi','Delhi','271003',2,'upload_e6096c211763cef5cb9ad26c98b26242'),(24,'2019-04-11 10:28:28','Dayalbagh Institute of Technology','dayalbaghit@gmail.com','+91-9045788521','Agra','Uttar Pradesh','241003',2,'upload_fdb1cde9f0392171accd0d7933f6d94d'),(25,'2019-04-11 10:43:15','Hindustan Institute of Science and Technology','hist@gmail.com','+91-5400312454','Agra','Uttar Pradesh','271005',4,'upload_bfcee526d661f9d2183ac6af32ee847f'),(26,'2019-04-11 10:45:56','BSA College of Technology','bsa@gmail.com','+91-8126151189','Mathura','Uttar Pradesh','281004',4,'upload_57dbced8004f0c31b9b872f092716f24'),(27,'2019-04-11 10:48:13','ABES Engineering college','abes@gmail.com','+91-9997774441','Ghaziabad','Uttar Pradesh','391412',4,'upload_1192cc30241f634f4029a5e0b2b7dbb7'),(28,'2019-04-11 10:52:56','Dalal Global Institute of Technology','dgiot@gmail.com','+91-8888811111','Delhi','Delhi','301010',4,'upload_0bac93800b63ce27a5f9482a72b02503'),(29,'2019-04-11 10:56:26','Indraprasth University','ipu@gmail.com','0565-281003','Delhi','Delhi','300001',3,'upload_07928f08921259bcdf981c1b4ad027e8'),(30,'2019-04-11 10:58:13','Amity University','amityuniv@gmail.com','0565-240398','Noida','Uttar Pradesh','291004',3,'upload_8e74387d992294457c7efae3ebb51356'),(31,'2019-04-11 11:00:37','Chandigarh University','chandigarhuni@gmail.com','+91-6667778881','Chandigarh','Punjab','290001',3,'upload_16deee415e439ea30f3a48c31c400b75'),(32,'2019-04-11 11:02:54','Aligarh uslim University','amu@gmail.com','+91-8888888881','Aligarh','Uttar Pradesh','271003',1,'upload_677e8a58e15a20c67fd77b8d232a77ce');
 /*!40000 ALTER TABLE `college_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +160,7 @@ CREATE TABLE `course_fee` (
   KEY `fk9` (`college_id`),
   CONSTRAINT `fk5` FOREIGN KEY (`course_id`) REFERENCES `course_type` (`id`),
   CONSTRAINT `fk9` FOREIGN KEY (`college_id`) REFERENCES `college_details` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,7 +169,7 @@ CREATE TABLE `course_fee` (
 
 LOCK TABLES `course_fee` WRITE;
 /*!40000 ALTER TABLE `course_fee` DISABLE KEYS */;
-INSERT INTO `course_fee` VALUES (5,'2019-04-05 06:44:48',1,1,'50000'),(6,'2019-04-05 06:44:48',1,2,'65000'),(7,'2019-04-05 06:44:48',1,3,'110000'),(8,'2019-04-05 06:44:48',1,4,'150000');
+INSERT INTO `course_fee` VALUES (11,'2019-04-11 09:48:27',1,19,'40000'),(12,'2019-04-11 09:59:39',1,20,'65000'),(13,'2019-04-11 10:09:40',1,21,'35000'),(14,'2019-04-11 10:18:41',1,22,'62000'),(15,'2019-04-11 10:23:59',1,23,'48000'),(16,'2019-04-11 10:28:28',1,24,'10000'),(17,'2019-04-11 10:43:15',1,25,'140000'),(18,'2019-04-11 10:45:56',1,26,'140000'),(19,'2019-04-11 10:48:13',1,27,'200000'),(20,'2019-04-11 10:52:56',1,28,'150000'),(21,'2019-04-11 10:56:27',1,29,'220000'),(22,'2019-04-11 10:58:13',1,30,'300000'),(23,'2019-04-11 11:00:37',1,31,'150000'),(24,'2019-04-11 11:02:54',1,32,'30000');
 /*!40000 ALTER TABLE `course_fee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -380,4 +380,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-05 12:31:56
+-- Dump completed on 2019-04-12  0:02:03
