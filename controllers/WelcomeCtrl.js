@@ -40,12 +40,19 @@ module.exports = {
         console.log(loc + " " + colltype);
         /* add a query to get list of colleges according to above perameters and return to listColleges file */
         //todo-RDX
+        var l,l1=[],r=[];
         var list = 'select * from college_details where state="%s" and type_id="%s"';
         var list1 = util.format(list, loc, colltype);
-
         var result1 = yield databaseUtils.executeQuery(list1);
-        console.log(result1);
+        for(var i in result1){
+             l='select spec_score from college_spec where college_id="%s"';
+             l1=util.format(l,result1[i].id);
+             res=yield databaseUtils.executeQuery(l1);
+             r.push(res[0]);
+        }
+        console.log(r);
         yield this.render('listcolleges', {
+            collegespec : r,
             listcollege: result1,
             loc: loc,
             colltype: colltype
@@ -85,21 +92,24 @@ module.exports = {
             // console.log(result2[0]);
             rows.push(result2[0]);
         }
-        // console.log(rows);
+        console.log(rows);
         var score=0
         var newarr=[]
+        var cfw=[];
+        var cfw1,c;
+        var cfwsum=[];
         for( var i in rows)
         {
             var query='select * from course_fee where college_id="%s"';
             var newresult=util.format(query,rows[i].college_id);
             newarr.push(newresult[0]);
+            
         }
         var finallist={}
-        var denominator
+        var denominator;
         for ( var i in rows)
         {
-            // console.log("rows[i].reviews="+rows[i].reviews);
-            // console.log("userreview="+userreview);
+            score=0;
             if(bfhm==0)
             {
                 score=score+(1+bhfacility)*(rows[i].bus);
@@ -129,6 +139,7 @@ module.exports = {
             denominator=denominator+( avgduration)*(rows[i].duration);
             denominator=denominator+( collegesurroundings)*(rows[i].surrounding);
             var newfee;
+    
             for(var j in newarr)
             {
                 if(newarr[j].college_id==rows[i].college_id)
@@ -143,11 +154,8 @@ module.exports = {
             }
             else 
                 score=score+40;
-            // console.log("manu "+score+"over");
-            // console.log("manu2 "+denominator+"over");
-            //console.log("rajul "+feek1+"over");
             finallycalucaltedrating=((score*100)/denominator);
-            //console.log("manu "+finallycalucaltedrating);
+            console.log("manu "+finallycalucaltedrating);
             finallist[rows[i].college_id]=-finallycalucaltedrating;
         }
         // finallist[4]=-80.32;
@@ -174,33 +182,40 @@ module.exports = {
         for(var i in sortedlist)
         {
              var id=sortedlist[i][0];
-             var score=-sortedlist[i][1];
+             var score=-sortedlist[i][1]
+
             //  console.log("id="+id+"score="+score);
         }
         // console.log(loc + " " + colltype +"\n"+sortedlist);
         /* add a query to get list of colleges according to above perameters and return to listColleges file */
         //todo-RDX
-
-        var squery1=[],squery2,s,s2;
-        //s='select * from college_details where id="1"';
-        //squery1=yield databaseUtils.executeQuery(s);
+        var s,s1,spec=[],res;
+        var squery1=[],squery2,s,s2,score1=[];
         for(var i in sortedlist){
-            s='select * from college_details where id ="%s"'
+            s='select * from college_details where id ="%s"';
             s2=util.format(s,sortedlist[i][0]);
             squery2=yield databaseUtils.executeQuery(s2);
-            
+            score1.push(-sortedlist[i][1]);
             squery1.push(squery2[0]);
-            //console.log(squery2);
+            s='select spec_score from college_spec where college_id ="%s"';
+            s1=util.format(s,sortedlist[i][0]);
+            res=yield databaseUtils.executeQuery(s1);
+            spec.push(res[0]);
+            console.log(sortedlist[i][0]);
         }
+
+        console.log(squery2);
+        console.log(spec);
         //squery2=squery1;
             console.log(squery1);
         var list = 'select * from college_details where state="%s" and type_id="%s"';
         var list1 = util.format(list, loc, colltype);
-        
         var result1 = yield databaseUtils.executeQuery(list1);
         yield this.render('showorderedcolleges', {
             squery1:squery1,
             listcollege: result1,
+            collegespec : score1,
+            normalscore : spec,
             loc: loc,
             colltype: colltype
         });
@@ -222,7 +237,7 @@ module.exports = {
     },
     showComPage: function* (next) {
         var cid1=this.params.id1;
-        var cid2=this.params.id1;
+        var cid2=this.params.id2;
         // console.log(collid);
         /* add a query to get Details of colleges return to listColleges page */
         //todo-RDX
@@ -233,9 +248,39 @@ module.exports = {
         var l = 'select * from college_details where id="%s"';
         var list2 = util.format(l, cid2);
         var result2 = yield databaseUtils.executeQuery(list2);
+        
+        var l2='select * from cfw where college_id="%s"';
+        var ls=util.format(l2,cid1);
+        var result3=yield databaseUtils.executeQuery(ls);
+
+        var l3='select * from cfw where college_id="%s"';
+        var ls1=util.format(l2,cid1);
+        var result4=yield databaseUtils.executeQuery(ls1);
+
+        var w='select specification from spec_weight';
+        var result5=yield databaseUtils.executeQuery(w);
+        var specs=['fee','bus','hostel','infra','placement','discipline','clubs','reviews','affiliations','curriculum','duration','surrounding'];
+        // console.log(result5);
+        // console.log(result4);
+        // console.log(specs[0]);
+        var s32='select spec_score from college_spec where college_id="%s"';
+        var su=util.format(s32,cid1);
+        var score11=yield databaseUtils.executeQuery(su);
+        console.log(score11);
+        var s22='select spec_score from college_spec where college_id="%s"';
+        var su2=util.format(s22,cid2);
+        var score22=yield databaseUtils.executeQuery(su2);
+        console.log(score11);
         yield this.render('collegecom',{
             listcollege:result1[0],
-            listcollege2:result2[0]
+            listcollege2:result2[0],
+            spec1:result3[0],
+            spec2:result4[0],
+            specification:result5,
+            specs:specs,
+            score11:score11[0],
+            score22:score22[0]
+    
         }); 
     },
     showCollegeFormPage: function* (next) {
@@ -265,6 +310,9 @@ module.exports = {
         var duration = this.request.body.fields.duration;
         var surroundings = this.request.body.fields.surroundings;
 
+        var sum=fee+bus+hostel+infra+placement+discipline+clubs+reviews+affiliations+curriculum+duration+surroundings;
+        var normalscore=sum*100/150;
+
         var userUploadedFile = this.request.body.files.image;
         var pic = userUploadedFile.path.split('/');
         var img = pic[3];
@@ -276,6 +324,10 @@ module.exports = {
         var fq = 'insert into course_fee(course_id,college_id,avgfee) values("%s","%s","%s")';
         var query1 = util.format(fq, 1, result1.insertId, cfee);
         var res = yield databaseUtils.executeQuery(query1);
+        //inserting normal_spec score
+        fq = 'insert into college_spec(college_id,spec_score) values("%s","%s")';
+        query1 = util.format(fq, result1.insertId, normalscore);
+        res = yield databaseUtils.executeQuery(query1);
         list1 = 'INSERT INTO `cfw`(college_id,fee,bus,hostel,infra,placement,discipline,clubs,reviews,affiliations,curriculum,duration,surrounding) VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s")';
         query = util.format(list1, result1.insertId, fee, bus, hostel, infra, placement, discipline, clubs, reviews, affiliations, curriculum, duration, surroundings);
         result1 = yield databaseUtils.executeQuery(query);

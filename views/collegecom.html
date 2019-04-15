@@ -11,220 +11,170 @@
   <div class="wrapper homePage">
 
       <% include header.html %>
-<!-- Page breadcrumb -->
-<section id="mu-page-breadcrumb">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mu-page-breadcrumb-area">
-          <h2>College Detail</h2>
-          <ol class="breadcrumb">
-           <li><a href="/app/home">Home</a></li>            
-           <li class="active">College Detail</li>
-         </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End breadcrumb -->
-  <div class="card-body">
-      <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                  <img src="../static/uploads/<%=listcollege.img%>" width="60%">
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body">
-                    <h1><%=listcollege.name%><h1>
-                  <span><%=listcollege.city%>,<%=listcollege.state%></span>
-                  <span><%=listcollege.email%>,<%=listcollege.contact%></span>
-                  <span><%=listcollege.pincode%>,<%=listcollege.type_id%></span>
-                </div>
-              </div>
-            </div>
-      </div>
-  <hr>
-</div>
 <section id="mu-course-content">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="mu-course-content-area">
            <div class="row">
-             <div class="col-md-9">
+             <div class="col-md-6">
                <!-- start course content container -->
                <div class="mu-course-container mu-course-details">
                  <div class="row">
                    <div class="col-md-12">
                      <div class="mu-latest-course-single">
-                       <figure class="mu-latest-course-img">
-                         <a href="#"><img src="../static/uploads/1.jpg" alt="img"></a>
+                        <figure class="mu-latest-course-img text-center">
+                            <img src="\static\uploads\<%=listcollege.img%>" height="250" alt="img">
                        </figure>
                        <div class="mu-latest-course-single-content">
-                         <h2><a href="/app/cdetail/<%=listcollege.id%>"><%=listcollege.name%></a></h2>
+                        <div class="row"style="height: 100px;"><h2><a href="/app/cdetail/<%=listcollege.id%>"><%=listcollege.name%></a></h2></div>
                          <h4><span><%=listcollege.city%>,<%=listcollege.state%></span></h4>
                          <ul>
                            <li> <span>Email</span> <span><%=listcollege.email%></span></li>
                            <li> <span>Place</span> <span><%=listcollege.city%>,<%=listcollege.state%></span></li>
-                           <li> <span>Total Students</span> <span>800+</span></li>
+                           
                            <li> <span>Contact</span> <span><%=listcollege.contact%></span></li>
                            <li> <span>Pin Code</span> <span><%=listcollege.pincode%></span></li>
+                           <li><span>Spec Score</span><span><%=score11.spec_score%></span></span></li>
                          </ul>
                          <h4>Course Outline</h4>
                          <div class="table-responsive">
                            <table class="table">
                            <thead>
                              <tr>
-                               <th> Title </th>
-                               <th> Course Time </th>
-                               <th> Spent Time </th>
-                               <th> Status </th>
+                               <th> Specifications</th>
+                               <th> Value</th>
                              </tr>
                            </thead>
                            <tbody>
-                             <tr>
-                               <td> 1. Topic 1 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 2. Topic 2 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 3. Topic 3 </td>
-                               <td> 15:30 </td>
-                               <td> - </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 4. Topic 4 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 5. Topic 5 </td>
-                               <td> 15:30 </td>
-                               <td> - </td>
-                               <td> Waiting </td>
-                             </tr>
-                             <tr>
-                               <td> 6. Topic 6 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> - </td>
-                             </tr>
-                           </tbody>
-                         </table>
-                         </div>
-                       </div>
-                     </div> 
-                   </div>                                   
-                 </div>
-               </div>
-               <!-- end course content container -->
-         
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="mu-course-content-area">
-           <div class="row">
-             <div class="col-md-9">
-               <!-- start course content container -->
-               <div class="mu-course-container mu-course-details">
-                 <div class="row">
-                   <div class="col-md-12">
-                     <div class="mu-latest-course-single">
-                       <figure class="mu-latest-course-img">
-                         <a href="#"><img src="../static/uploads/1.jpg" alt="img"></a>
-                       </figure>
-                       <div class="mu-latest-course-single-content">
-                         <h2><a href="/app/cdetail/<%=listcollege.id%>"><%=listcollege2.name%></a></h2>
-                         <h4><span><%=listcollege2.city%>,<%=listcollege2.state%></span></h4>
-                         <ul>
-                           <li> <span>Email</span> <span><%=listcollege2.email%></span></li>
-                           <li> <span>Place</span> <span><%=listcollege2.city%>,<%=listcollege2.state%></span></li>
-                           <li> <span>Total Students</span> <span>800+</span></li>
-                           <li> <span>Contact</span> <span><%=listcollege2.contact%></span></li>
-                           <li> <span>Pin Code</span> <span><%=listcollege2.pincode%></span></li>
-                         </ul>
-                         <h4>Course Outline</h4>
-                         <div class="table-responsive">
-                           <table class="table">
-                           <thead>
-                             <tr>
-                               <th> Title </th>
-                               <th> Course Time </th>
-                               <th> Spent Time </th>
-                               <th> Status </th>
-                             </tr>
-                           </thead>
-                           <tbody>
-                             <tr>
-                               <td> 1. Topic 1 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 2. Topic 2 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 3. Topic 3 </td>
-                               <td> 15:30 </td>
-                               <td> - </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 4. Topic 4 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> Successful </td>
-                             </tr>
-                             <tr>
-                               <td> 5. Topic 5 </td>
-                               <td> 15:30 </td>
-                               <td> - </td>
-                               <td> Waiting </td>
-                             </tr>
-                             <tr>
-                               <td> 6. Topic 6 </td>
-                               <td> 15:30 </td>
-                               <td> 13:80 </td>
-                               <td> - </td>
-                             </tr>
-                           </tbody>
-                         </table>
-                         </div>
-                       </div>
-                     </div> 
-                   </div>                                   
-                 </div>
-               </div>
-               <!-- end course content container -->
-         
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                            <tr>
+                              <td> -> Fees : </td>
+                              <td><%= listcollege.fees %></td>
+                            </tr>
+                            <tr>
+                              <td> -> Bus : </td>
+                              <td><%= listcollege.bus %> </td>
+                            </tr>
+                            <tr>
+                              <td> -> Hostel Rating : </td>
+                              <td><%= listcollege.hostel %> </td>
+                            </tr>
+                            <tr>
+                              <td> -> Students Enrolled : </td>
+                              <td><%= listcollege.students  %></td>
+                            </tr>
+                            <tr>
+                              <td> -> Faculty And Staff : </td>
+                              <td><%= listcollege.faculty  %></td>
+                            </tr>
+                            <tr>
+                              <td> -> Proctorial Board :</td>
+                              <td> <%= listcollege.pb  %> </td>
+                            </tr>
+                            <tr>
+                              <td> -> NAAC Grade  :</td>
+                              <td> <%= listcollege.naac  %></td>
+                            </tr>
+                            <tr>
+                              <td> -> Location  :</td>
+                              <td> <%= listcollege.surrounding %></td>
+                            </tr>
 
+                           </tbody>
+                         </table>
+                         </div>
+                       </div>
+                     </div> 
+                   </div>                                   
+                 </div>
+               </div>
+               <!-- end course content container -->
+         
+            </div>
+
+            <div class="col-md-6">
+                <!-- start course content container -->
+                <div class="mu-course-container mu-course-details">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="mu-latest-course-single">
+                          <figure class="mu-latest-course-img text-center">
+                              <img src="\static\uploads\<%=listcollege2.img%>" height="250" alt="img">
+                            </figure>
+                        <div class="mu-latest-course-single-content">
+                          <div class="row" style="height: 100px;"><h2><a href="/app/cdetail/<%=listcollege2.id%>"><%=listcollege2.name%></a></h2></div>
+                          <h4><span><%=listcollege2.city%>,<%=listcollege2.state%></span></h4>
+                          <ul>
+                            <li> <span>Email</span> <span><%=listcollege2.email%></span></li>
+                            <li> <span>Place</span> <span><%=listcollege2.city%>,<%=listcollege2.state%></span></li>
+                       
+                            <li> <span>Contact</span> <span><%=listcollege2.contact%></span></li>
+                            <li> <span>Pin Code</span> <span><%=listcollege2.pincode%></span></li>
+                            <li><span>Spec Score</span><span><%=score22.spec_score%></span></span></li>
+                          </ul>
+                          <h4>Course Outline</h4>
+                          <div class="table-responsive">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th> Specifications</th>
+                                  <th> Value</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                               <tr>
+                                 <td> -> Fees : </td>
+                                 <td><%= listcollege2.fees %></td>
+                               </tr>
+                               <tr>
+                                 <td> -> Bus : </td>
+                                 <td><%= listcollege2.bus %> </td>
+                               </tr>
+                               <tr>
+                                 <td> -> Hostel Rating : </td>
+                                 <td><%= listcollege2.hostel %> </td>
+                               </tr>
+                               <tr>
+                                 <td> -> Students Enrolled : </td>
+                                 <td><%= listcollege2.students  %></td>
+                               </tr>
+                               <tr>
+                                 <td> -> Faculty And Staff : </td>
+                                 <td><%= listcollege2.faculty  %></td>
+                               </tr>
+                               <tr>
+                                 <td> -> Proctorial Board :</td>
+                                 <td> <%= listcollege2.pb  %> </td>
+                               </tr>
+                               <tr>
+                                 <td> -> NAAC Grade  :</td>
+                                 <td> <%= listcollege2.naac  %></td>
+                               </tr>
+                               <tr>
+                                 <td> -> Location  :</td>
+                                 <td> <%= listcollege2.surrounding %></td>
+                               </tr>
+   
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>                                   
+                  </div>
+                </div>
+                <!-- end course content container -->
+          
+             </div>
+           
+
+
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+</section>
 
 
       <% include footer.html %>
