@@ -72,6 +72,14 @@ CREATE TABLE `college_details` (
   `pincode` varchar(6) DEFAULT NULL,
   `type_id` int(11) unsigned NOT NULL,
   `img` varchar(255) DEFAULT NULL,
+  `fees` varchar(30) DEFAULT NULL,
+  `bus` varchar(30) DEFAULT NULL,
+  `hostel` varchar(30) DEFAULT NULL,
+  `faculty` varchar(30) DEFAULT NULL,
+  `naac` varchar(30) DEFAULT NULL,
+  `pb` varchar(30) DEFAULT NULL,
+  `surrounding` varchar(30) DEFAULT NULL,
+  `students` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_email` (`email`),
   UNIQUE KEY `unique_mobile` (`contact`),
@@ -86,7 +94,7 @@ CREATE TABLE `college_details` (
 
 LOCK TABLES `college_details` WRITE;
 /*!40000 ALTER TABLE `college_details` DISABLE KEYS */;
-INSERT INTO `college_details` VALUES (19,'2019-04-11 09:48:27','APJ Abdul Kalam University','apjabdulkalamclg@gmail.com','+91-9760941714','Lucknow','Uttar Pradesh','261003',1,'upload_d184c469f9807024790e11fd1250c7ee'),(20,'2019-04-11 09:59:38',' Delhi Technical University','dtu@gmail.com','+91-9765141268','Delhi','Delhi','274002',1,'upload_6152821e56da5dff524b0d991bc96d60'),(21,'2019-04-11 10:09:40','Deen Dayal Upadhyay University','dduu@gmail.com','+91-9765141456','Gorakhpur','Uttar Pradesh','276001',1,'upload_6ef0d3fe76368d7248972e263ca7a832'),(22,'2019-04-11 10:18:41','Shaheed Bhagat Singh Institute of Technology','sbsit@gmail.com','+91-9765431211','Ferozpur','Punjab','312004',2,'upload_07e960b99e41f5b8a4ee464101c1e859'),(23,'2019-04-11 10:23:59','Netaji Subhash Institute of Technology','nsit@gmail.com','+91-8126199171','Delhi','Delhi','271003',2,'upload_e6096c211763cef5cb9ad26c98b26242'),(24,'2019-04-11 10:28:28','Dayalbagh Institute of Technology','dayalbaghit@gmail.com','+91-9045788521','Agra','Uttar Pradesh','241003',2,'upload_fdb1cde9f0392171accd0d7933f6d94d'),(25,'2019-04-11 10:43:15','Hindustan Institute of Science and Technology','hist@gmail.com','+91-5400312454','Agra','Uttar Pradesh','271005',4,'upload_bfcee526d661f9d2183ac6af32ee847f'),(26,'2019-04-11 10:45:56','BSA College of Technology','bsa@gmail.com','+91-8126151189','Mathura','Uttar Pradesh','281004',4,'upload_57dbced8004f0c31b9b872f092716f24'),(27,'2019-04-11 10:48:13','ABES Engineering college','abes@gmail.com','+91-9997774441','Ghaziabad','Uttar Pradesh','391412',4,'upload_1192cc30241f634f4029a5e0b2b7dbb7'),(28,'2019-04-11 10:52:56','Dalal Global Institute of Technology','dgiot@gmail.com','+91-8888811111','Delhi','Delhi','301010',4,'upload_0bac93800b63ce27a5f9482a72b02503'),(29,'2019-04-11 10:56:26','Indraprasth University','ipu@gmail.com','0565-281003','Delhi','Delhi','300001',3,'upload_07928f08921259bcdf981c1b4ad027e8'),(30,'2019-04-11 10:58:13','Amity University','amityuniv@gmail.com','0565-240398','Noida','Uttar Pradesh','291004',3,'upload_8e74387d992294457c7efae3ebb51356'),(31,'2019-04-11 11:00:37','Chandigarh University','chandigarhuni@gmail.com','+91-6667778881','Chandigarh','Punjab','290001',3,'upload_16deee415e439ea30f3a48c31c400b75'),(32,'2019-04-11 11:02:54','Aligarh uslim University','amu@gmail.com','+91-8888888881','Aligarh','Uttar Pradesh','271003',1,'upload_677e8a58e15a20c67fd77b8d232a77ce');
+INSERT INTO `college_details` VALUES (19,'2019-04-15 07:16:34','APJ Abdul Kalam University','apjabdulkalamclg@gmail.com','+91-9760941714','Lucknow','Uttar Pradesh','261003',1,'upload_d184c469f9807024790e11fd1250c7ee','40000','Limited','8/10','500+','A','Yes','Urban','10000+'),(20,'2019-04-15 07:16:18',' Delhi Technical University','dtu@gmail.com','+91-9765141268','Delhi','Delhi','274002',1,'upload_6152821e56da5dff524b0d991bc96d60','65000','Limited','9/10','700+','A+','Yes','Rural','80000+'),(21,'2019-04-15 07:17:49','Deen Dayal Upadhyay University','dduu@gmail.com','+91-9765141456','Gorakhpur','Uttar Pradesh','276001',1,'upload_6ef0d3fe76368d7248972e263ca7a832','35000','Very limited','8/10','300+','A','Yes','Sub-Urban','8000+'),(22,'2019-04-15 07:19:15','Shaheed Bhagat Singh Institute of Technology','sbsit@gmail.com','+91-9765431211','Ferozpur','Punjab','312004',2,'upload_07e960b99e41f5b8a4ee464101c1e859','62000','Limited','5/10','500+','B+','Yes','Rural','4000+'),(23,'2019-04-15 07:20:42','Netaji Subhash Institute of Technology','nsit@gmail.com','+91-8126199171','Delhi','Delhi','271003',2,'upload_e6096c211763cef5cb9ad26c98b26242','48000','High availability','6/10','700+','A','No','Sub-Urban','3000+'),(24,'2019-04-15 07:22:04','Dayalbagh Institute of Technology','dayalbaghit@gmail.com','+91-9045788521','Agra','Uttar Pradesh','241003',2,'upload_fdb1cde9f0392171accd0d7933f6d94d','10000','Only for Staff','6/10','600+','A','Yes','Out of Residence area','1000+'),(25,'2019-04-15 07:23:41','Hindustan Institute of Science and Technology','hist@gmail.com','+91-5400312454','Agra','Uttar Pradesh','271005',4,'upload_bfcee526d661f9d2183ac6af32ee847f','140000','High availabiity','8/10','500+','B','Yes','Urban','2000+'),(26,'2019-04-15 07:26:58','BSA College of Technology','bsa@gmail.com','+91-8126151189','Mathura','Uttar Pradesh','281004',4,'upload_57dbced8004f0c31b9b872f092716f24','140000','Only for Staff','3/10','300+','B+','Yes','Urban','1500+'),(27,'2019-04-15 07:27:46','ABES Engineering college','abes@gmail.com','+91-9997774441','Ghaziabad','Uttar Pradesh','391412',4,'upload_1192cc30241f634f4029a5e0b2b7dbb7','200000','High availability','8.5/10','500+','A','Yes','Urban','1500+'),(28,'2019-04-15 07:29:00','Dalal Global Institute of Technology','dgiot@gmail.com','+91-8888811111','Delhi','Delhi','301010',4,'upload_0bac93800b63ce27a5f9482a72b02503','150000','High availability','9/10','600+','A','Yes','Urban','2600+'),(29,'2019-04-15 07:29:42','Indraprasth University','ipu@gmail.com','0565-281003','Delhi','Delhi','300001',3,'upload_07928f08921259bcdf981c1b4ad027e8','220000','High availability','9/10','400+','B+','No','Sub-Urban','2000+'),(30,'2019-04-15 07:30:28','Amity University','amityuniv@gmail.com','0565-240398','Noida','Uttar Pradesh','291004',3,'upload_8e74387d992294457c7efae3ebb51356','300000','High availability','9.5/10','800+','A','Yes','Sub-Urban','10000+'),(31,'2019-04-15 07:31:15','Chandigarh University','chandigarhuni@gmail.com','+91-6667778881','Chandigarh','Punjab','290001',3,'upload_16deee415e439ea30f3a48c31c400b75','150000','Available','8/10','500+','B+','Yes','Urban','1000+'),(32,'2019-04-15 07:31:54','Aligarh uslim University','amu@gmail.com','+91-8888888881','Aligarh','Uttar Pradesh','271003',1,'upload_677e8a58e15a20c67fd77b8d232a77ce','30000','Limited','7/10','400+','B+','Yes','Urban','2000+');
 /*!40000 ALTER TABLE `college_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +113,7 @@ CREATE TABLE `college_spec` (
   PRIMARY KEY (`id`),
   KEY `fk4` (`college_id`),
   CONSTRAINT `fk4` FOREIGN KEY (`college_id`) REFERENCES `college_details` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,6 +122,7 @@ CREATE TABLE `college_spec` (
 
 LOCK TABLES `college_spec` WRITE;
 /*!40000 ALTER TABLE `college_spec` DISABLE KEYS */;
+INSERT INTO `college_spec` VALUES (1,'2019-04-14 20:20:20',19,73),(2,'2019-04-14 20:20:20',20,79),(3,'2019-04-14 20:20:20',21,66),(4,'2019-04-14 20:20:20',22,77),(5,'2019-04-14 20:20:20',23,81),(6,'2019-04-14 20:20:20',24,64),(7,'2019-04-14 20:20:20',25,71),(8,'2019-04-14 20:20:20',26,67),(9,'2019-04-14 20:20:20',27,73),(10,'2019-04-14 20:20:20',28,73),(11,'2019-04-14 20:20:20',29,81),(12,'2019-04-14 20:20:20',30,80),(13,'2019-04-14 20:20:20',31,79),(14,'2019-04-14 20:20:20',32,71);
 /*!40000 ALTER TABLE `college_spec` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -380,4 +389,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-12  0:02:03
+-- Dump completed on 2019-04-16  4:40:47
